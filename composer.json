@@ -1,0 +1,30 @@
+{
+    "name": "wengoldwu/alibaba",
+    "description": "alibaba",
+    "keywords": ["PHP","wengoldwu","alibaba","sms","email"],
+    "license": "MIT",
+    "type": "library",
+    "homepage": "http://www.wenjinwu.com",
+    "authors": [
+        {
+            "name": "wjw-ah",
+            "email": "2491975269@qq.com"
+        }
+    ],
+    "require": {
+        "php": ">=7.0",
+        "ext-curl": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "alibaba\\Api\\": "src/"
+        }
+    },
+    "require-dev": {
+        "phpmailer/phpmailer": "^6.1"
+    },
+    "suggest": {
+        "ext-mbstring": "For best performance",
+        "ext-curl": "Required for CURL handler support"
+    }
+}
