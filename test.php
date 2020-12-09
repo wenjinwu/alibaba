@@ -4,6 +4,7 @@ use alibaba\Api\alibaba\sms\AlibabaSms;
 use alibaba\Api\alibaba\email\EmailSend;
 use alibaba\Api\alibaba\email\AcsClient;
 use alibaba\Api\alibaba\oss\Oss;
+use alibaba\Api\qiniu\oss\Oss as qnOss;
 ////api发送邮件
 //$config = [
 //    'accessKeyId'=>'',
@@ -28,15 +29,23 @@ use alibaba\Api\alibaba\oss\Oss;
 //$EmailSend = EmailSend::send_mail('接收邮箱', '主题', '正文');
 
 //oss API
+//$config = [
+//    'accesskey'=> '',
+//    'accesskeySecret'=> '',
+//    'bucket'=> '',
+//];
+//$data = "./timg.jpg";
+//$oss = new Oss($config);
+//$send = $oss ->upload($data);
+////$send = $oss ->del($data);
 $config = [
     'accesskey'=> '',
     'accesskeySecret'=> '',
     'bucket'=> '',
 ];
 $data = "./timg.jpg";
-//$data = "/1607425519.jpg";
-$oss = new Oss($config);
-$send = $oss ->upload($data);
-//$send = $oss ->del($data);
+$oss = new qnOss($config);
+//$send = $oss ->Upload($data);
+$send = $oss ->token($data);
 print_r($send);
 die();
